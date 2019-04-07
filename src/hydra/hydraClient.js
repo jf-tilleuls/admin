@@ -14,9 +14,12 @@ import fetchHydra from './fetchHydra';
 class ReactAdminDocument {
   constructor(obj) {
     Object.assign(this, obj, {
-      originId: obj.id,
+      // originId: obj.id,
       id: obj['@id'],
     });
+    delete this['@type'];
+    delete this['@id'];
+    delete this['@context'];
   }
 
   /**

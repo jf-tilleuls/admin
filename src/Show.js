@@ -1,6 +1,6 @@
 import Api from '@api-platform/api-doc-parser/lib/Api';
 import Resource from '@api-platform/api-doc-parser/lib/Resource';
-import {Show as BaseShow, SimpleShowLayout, TextField} from 'react-admin';
+import {ShowGuesser, SimpleShowLayout, TextField} from 'react-admin';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -39,7 +39,7 @@ const Show = props => {
   } = resolveProps(props);
 
   return (
-    <BaseShow {...props}>
+    <ShowGuesser {...props}>
       <SimpleShowLayout>
         {addIdField && <TextField source="id" />}
         {fields.map(field =>
@@ -49,7 +49,7 @@ const Show = props => {
           }),
         )}
       </SimpleShowLayout>
-    </BaseShow>
+    </ShowGuesser>
   );
 };
 

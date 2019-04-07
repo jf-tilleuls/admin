@@ -3,7 +3,8 @@ import React from 'react';
 
 const resolveProps = props => {
   const {options} = props;
-  const {parameterFactory, parameters} = options;
+  const {parameterFactory, resource} = options;
+  const {parameters} = resource;
   return {
     ...props,
     parameterFactory: parameterFactory,

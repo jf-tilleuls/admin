@@ -1,6 +1,6 @@
-import Api from '@api-platform/api-doc-parser/lib/Api';
-import Field from '@api-platform/api-doc-parser/lib/Field';
-import Resource from '@api-platform/api-doc-parser/lib/Resource';
+import Api from '@api-platform/api-doc-parser/src/Api';
+import Field from '@api-platform/api-doc-parser/src/Field';
+import Resource from '@api-platform/api-doc-parser/src/Resource';
 import {ArrayInput, SimpleFormIterator, TextInput} from 'react-admin';
 import {shallow} from 'enzyme';
 import React from 'react';

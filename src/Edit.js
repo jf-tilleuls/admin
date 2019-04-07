@@ -1,6 +1,6 @@
 import Api from '@api-platform/api-doc-parser/lib/Api';
 import Resource from '@api-platform/api-doc-parser/lib/Resource';
-import {DisabledInput, Edit as BaseEdit, SimpleForm} from 'react-admin';
+import {DisabledInput, EditGuesser, SimpleForm} from 'react-admin';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -39,7 +39,7 @@ const Edit = props => {
   } = resolveProps(props);
 
   return (
-    <BaseEdit {...props}>
+    <EditGuesser {...props}>
       <SimpleForm>
         {addIdInput && <DisabledInput source="id" />}
         {fields.map(field =>
@@ -49,7 +49,7 @@ const Edit = props => {
           }),
         )}
       </SimpleForm>
-    </BaseEdit>
+    </EditGuesser>
   );
 };
 

@@ -3,7 +3,7 @@ import Resource from '@api-platform/api-doc-parser/lib/Resource';
 import {
   Datagrid,
   EditButton,
-  List as BaseList,
+  ListGuesser,
   ShowButton,
   TextField,
 } from 'react-admin';
@@ -62,26 +62,27 @@ const List = props => {
   } = resolveProps(props);
 
   return (
-    <BaseList
+    <ListGuesser
       {...props}
-      filters={<ListFilter options={{parameterFactory, parameters}} />}>
-      <Datagrid>
-        {addIdField && (
-          <TextField
-            source="id"
-            sortable={isFieldSortable({name: 'id'}, resource)}
-          />
-        )}
-        {fields.map(field =>
-          fieldFactory(field, {
-            api,
-            resource,
-          }),
-        )}
-        {hasShow && <ShowButton />}
-        {hasEdit && <EditButton />}
-      </Datagrid>
-    </BaseList>
+      filters={<ListFilter {...props} />}
+    >
+      {/*<Datagrid>*/}
+      {/*  {addIdField && (*/}
+      {/*    <TextField*/}
+      {/*      source="id"*/}
+      {/*      sortable={isFieldSortable({name: 'id'}, resource)}*/}
+      {/*    />*/}
+      {/*  )}*/}
+      {/*  {fields.map(field =>*/}
+      {/*    fieldFactory(field, {*/}
+      {/*      api,*/}
+      {/*      resource,*/}
+      {/*    }),*/}
+      {/*  )}*/}
+      {/*  {hasShow && <ShowButton />}*/}
+      {/*  {hasEdit && <EditButton />}*/}
+      {/*</Datagrid>*/}
+    </ListGuesser>
   );
 };
 
